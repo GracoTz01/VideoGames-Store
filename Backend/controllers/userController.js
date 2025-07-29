@@ -19,5 +19,17 @@ const depositMoney = async (req, res) => {
     }
 }
 
+const getUserBalance = async (req, res) => {
+    try {
+        const user = await User.findById(req.user.id);
+        if (!user) {
+            return res.status(404).json({ message: 'User not found.' });
+        }
+        res.status(200).json({ balance: user.balance });
+    } catch (error) {
+        res.status(500).json({ message: 'Error retrieving balance', error });
+    }
+}
 
-module.exports = { depositMoney };
+
+module.exports = { depositMoney, getUserBalance };
