@@ -1,0 +1,28 @@
+📦 RUTAS DISPONIBLES
+
+POST /api/auth/login
+Headers: none
+Body: { email, password }
+→ Loguearse
+
+POST /api/auth/register
+Headers: none
+Body: { name, email, password }
+→ Registrarse
+
+POST /api/user/deposit
+Headers: { 'Authorization' : 'Bearer TU_TOKEN' }
+Body: { amount }
+→ Permite al cliente depositar dinero
+
+GET /api/user/balance
+Headers: { 'Authorization' : 'Bearer TU_TOKEN' }
+→ Devuelve el saldo actual del usuario logueado
+
+POST /api/products
+Headers: { 'Authorization' : 'Bearer TU_TOKEN' }
+Body: { name, image, description, price, stock }
+→ Solo admin, crea productos
+
+GET /api/products
+→ Devuelve todos los productos
