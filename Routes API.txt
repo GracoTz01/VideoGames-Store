@@ -1,5 +1,6 @@
 📦 RUTAS DISPONIBLES
 
+🔐 Auth
 POST /api/auth/login
 Headers: none
 Body: { email, password }
@@ -10,6 +11,7 @@ Headers: none
 Body: { name, email, password }
 → Registrarse
 
+👤 Usuario
 POST /api/user/deposit
 Headers: { 'Authorization' : 'Bearer TU_TOKEN' }
 Body: { amount }
@@ -19,6 +21,8 @@ GET /api/user/balance
 Headers: { 'Authorization' : 'Bearer TU_TOKEN' }
 → Devuelve el saldo actual del usuario logueado
 
+
+🛍️ Productos
 POST /api/products
 Headers: { 'Authorization' : 'Bearer TU_TOKEN' }
 Body: { name, image, description, price, stock }
@@ -26,3 +30,12 @@ Body: { name, image, description, price, stock }
 
 GET /api/products
 → Devuelve todos los productos
+
+PUT /api/products/:id
+→ Actualizar producto (solo admin)
+Headers: { Authorization: Bearer TOKEN }
+Body: { name?, image?, description?, price?, stock? }
+
+DELETE /api/products/:id
+→ Eliminar producto (solo admin)
+Headers: { Authorization: Bearer TOKEN }
