@@ -4,20 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Store</title>
-    <link rel="stylesheet" href="./register.css">
+    <link rel="stylesheet" href="./login.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <div class="register-container" id="register-container">
-        <h1>Create new Account</h1>
+    <div class="login-container" id="login-container">
+        <h1>Sign In</h1>
         <form>
-            <div class="input-group">
-                <i class="fa-solid fa-user"></i>
-                <input type="text" id="name" name="name" placeholder="Name" required>
-            </div>
             <div class="input-group">
                 <i class="fa-solid fa-envelope"></i>
                 <input type="text" id="email" placeholder="Email" required>
@@ -27,10 +23,10 @@
                 <input type="password" id="password" placeholder="password" required>
                 <i class="fa-solid fa-eye eye-icon" data-target="password"></i>
             </div>
-            <button type="submit" class="register-btn">Register</button>
-            <p class="link-helper">You already have an account? <a href="../login/login.html">Sign In Here</a></p>
+            <button type="submit" class="login-btn">Sign In</button>
+            <p class="link-helper">Don't have account? <a href="../register/index.html">Register here</a></p>
         </form>
     </div>
-    <script src="./register.js"></script>
+    <script src="./login.js"></script>
 </body>
 </html>
