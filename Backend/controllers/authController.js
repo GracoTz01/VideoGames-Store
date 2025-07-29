@@ -19,7 +19,7 @@ const registerUser = async (req, res) => {
         const newUser = new User({
             name,
             email,
-            password: hashedPassword 
+            password: hashedPassword
         });
 
         await newUser.save();
@@ -33,7 +33,9 @@ const registerUser = async (req, res) => {
             user: {
                 id: newUser._id,
                 name: newUser.name,
-                email: newUser.email
+                email: newUser.email,
+                balance: newUser.balance,
+                createdAt: newUser.createdAt
             }
         });
 
@@ -43,4 +45,42 @@ const registerUser = async (req, res) => {
     }
 }
 
-module.exports = { registerUser };
+const loginUser = async (req, res) => {
+    const { email, password } = req.body;
+    const emailLower = email.toLowerCase().trim();
+    try {
+        const user = await User.findOne({ email : emailLower });
+
+        // Check if user exists
+        if (!user) {
+            return res.status(401).json({ message: 'Invalid email or password' });
+        }
+
+        // Check password
+        const isPasswordValid = await bcrypt.compare(password, user.password);
+        if (!isPasswordValid) {
+            return res.status(401).json({ message: 'Invalid email or password' });
+        }
+
+        // Generate a JWT token
+        const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
+
+        return res.status(200).json({
+            message: 'User logged in successfully',
+            token,
+            user: {
+                id: user._id,
+                name: user.name,
+                email: user.email,
+                balance: user.balance,
+                createdAt: user.createdAt
+            }
+        });
+
+    } catch (error) {
+        console.error('Error logging in user:', error);
+        return res.status(500).json({ message: 'Server error' });
+    }
+}
+
+module.exports = { registerUser, loginUser };
