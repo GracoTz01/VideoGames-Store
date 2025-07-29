@@ -11,7 +11,7 @@ body {
     justify-content: center;
     background-color: var(--bg-dark);
     color:rgb(184, 6, 6);
-    background:  linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('game_wallpaper_optimized.jpg');
+    background:  linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../../img/gaming_collage_optimized.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
