@@ -21,6 +21,11 @@ GET /api/user/balance
 Headers: { 'Authorization' : 'Bearer TU_TOKEN' }
 → Devuelve el saldo actual del usuario logueado
 
+POST /api/user/purchase
+Headers: { 'Authorization' : 'Bearer TU_TOKEN' }
+Body: items -> Array de los productos
+-> Devuelve informacion sobre la compra
+
 
 🛍️ Productos
 POST /api/products
