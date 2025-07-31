@@ -21,6 +21,7 @@ const depositMoney = async (req, res) => {
     }
 }
 
+// Get user balance
 const getUserBalance = async (req, res) => {
     try {
         const user = await User.findById(req.user.id);
