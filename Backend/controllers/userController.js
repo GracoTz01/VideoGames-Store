@@ -111,4 +111,18 @@ const purchaseProduct = async (req, res) => {
     }
 }
 
-module.exports = { depositMoney, getUserBalance, purchaseProduct };
+const getPurchaseHistory = async (req, res) => {
+    try {
+        const orders = await Order.find({ user: req.user.id})
+                                .populate('products.product')
+                                .sort({ createdAt: -1 });
+        res.status(200).json({
+            message: 'Purchase history retrieved successfully',
+            orders: orders
+    });
+    } catch (error) {
+        res.status(500).json({ message: 'Error retrieving purchase history', error });
+    }
+}
+
+module.exports = { depositMoney, getUserBalance, purchaseProduct, getPurchaseHistory };

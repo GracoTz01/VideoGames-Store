@@ -1,5 +1,5 @@
 const express = require('express');
-const { depositMoney, getUserBalance, purchaseProduct } = require('../controllers/userController');
+const { depositMoney, getUserBalance, purchaseProduct, getPurchaseHistory } = require('../controllers/userController');
 const verifyToken = require('../middlewares/verifyToken');
 const router = express.Router();
 
@@ -7,6 +7,7 @@ const router = express.Router();
 router.post('/deposit', verifyToken, depositMoney);
 router.get('/balance', verifyToken, getUserBalance);
 router.post('/purchase', verifyToken, purchaseProduct);
+router.get('/history', verifyToken, getPurchaseHistory);
 
 // Export the user router
 module.exports = router;
