@@ -3,57 +3,40 @@
     padding: 0;
     box-sizing: border-box;
 }
-
-.logo img {
-    height: 20vh;
-    width: auto;
-    object-fit: contain;
-    animation-name: glowPulseLogo;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-}
-@keyframes glowPulseLogo{
-    0% {filter: drop-shadow(0 0 10px red);}
-    50% {filter: drop-shadow(0 0 25px red);}
-    100% {filter: drop-shadow(0 0 10px red);}
-}
-
 body {
-    font-family: "Bebas Neue", sans-serif;
+    font-family: "Poppins", sans-serif;
     background-color: #121212 ;
     color: white;
     min-height: 100vh;
 }
 header {
-    position: relative;
+    flex-wrap: nowrap;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background: linear-gradient(to right, #121212, #1a1a1a);
     padding: 20px 40px;
 }
-.center {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-43%);
-    
-}
-nav ul {
+.user-cart {
     display: flex;
     gap: 20px;
-    list-style: none;
     align-items: center;
 }
-nav a {
-    text-decoration: none;
+
+.user-cart button {
+    background-color: transparent;
+    border: none;
     color: white;
-    font-size: 18px;
-    transition: color 0.3s ease;
+    font-size: 22px;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
-nav a:hover {
-    color:  #e50914;
+
+.user-cart button:hover {
+    color: #e50914;
+    transform: scale(1.2);
 }
+
 footer {
     text-align: center;
     padding: 20px;
@@ -62,50 +45,125 @@ footer {
     color: #aaa;
 }
 
-/*estilos de game gallery*/
-.game-gallery{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 30px;
+.game-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 20px;
     max-width: 1200px;
     margin: 0 auto;
 }
+
 .game-card {
-    width: 100%;
-    max-width: 250px;
+    width: 260px;
     background-color: #1c1c1c;
-    border-radius: 10px;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 0 10px rgba(229, 9, 20, 0.3);
     color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 15px;
     transition: transform 0.3s ease;
 }
+
 .game-card:hover {
-    transform: scale(1.03);
+    transform: scale(1.05);
 }
-.game-card img{
-    width: 99%;
-    height: 200px;
-    object-fit: contain;
-    object-position: 50% 20%;
-    border-radius: 8px;
+
+.game-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    object-position: center;
 }
+
+.game-card h3 {
+    margin: 15px 0 5px;
+    font-size: 18px;
+}
+
+.game-card .price {
+    font-size: 16px;
+    color: #ccc;
+    margin-bottom: 10px;
+}
+
 .game-card button {
     background-color: #e50914;
     color: white;
     border: none;
-    padding: 8px 12px;
+    padding: 8px 16px;
     border-radius: 6px;
-    margin-top: 10px;
+    margin-bottom: 15px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 15px;
     transition: background 0.3s ease;
 }
-.game-card button:hover{
+
+.game-card button:hover {
     background-color: #b00710;
 }
+
+.welcome-section {
+  width: 100%;
+  overflow: hidden;
+  padding-top: 2px;
+  height: 600px;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  border-radius: 8px;
+  z-index: 10;
+}
+
+.overlay-text h1 {
+  font-size: 2.5rem;
+  line-height: 1.3;
+ 
+}
+.balance-section {
+    margin-top: 40px;
+    text-align: center;
+    padding: 20px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border-top: 2px solid #e50914;
+}
+.balance-section i {
+    color: #e50914;
+    margin-top: 8px;
+}
+.deposit {
+  background-color: #e50914;        
+  color: white;                  
+  border: none;                 
+  padding: 10px 20px;         
+  border-radius: 6px;          
+  font-size: 16px;              
+  font-weight: bold;           
+  cursor: pointer;               
+  margin-top: 20px;                
+  box-shadow: 0 0 10px rgba(229, 9, 20, 0.3); 
+  transition: background 0.3s ease; 
+}
+

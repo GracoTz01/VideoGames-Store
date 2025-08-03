@@ -7,43 +7,93 @@
     <link rel="stylesheet" href="home.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
 
 
 </head>
 <body>
-    <header>
-        <div class="left"></div>
-      <div class="logo" class="center">
-        <img src="../img/Logo.png" alt="VideoGame Logo">
-      </div>
-      <div>
-      <nav>
-        <ul>
-            <li><a href="#">Start</a></li>
-            <li><a href="#">Games</a></li>
-            <li><a href="#" class="cart"><i class="fa-solid fa-cart-shopping"></i></a></li>
-            <li><a href="#" class="user"><i class="fa-solid fa-user"></i></a></li>
-        </ul>
-     </nav>
+      <header class="main-header">
+      <canvas id="logoCanvas" width="150" height="80"></canvas>
+     <div class="user-cart">
+        <button class="user-btn"><i class="fa-solid fa-user"></i></button>
+        <button class="cart-btn"><i class="fa-solid fa-cart-shopping"></i></button>
      </div>
-   </header>
+
+    </header>
+    <section class="welcome-section">
+        <div class="image-container">
+        <img src="../img/imgpro.png" alt="Banner GameVerse">
+        <div class="overlay-text">
+            <h1>Welcome to GameVerse –<br>Your favorite game store</h1>
+        </div>
+       </div>
+    </section>
+
    <main>
     <!--aqui ira la tarjeta de juego-->
     <section class="game-gallery">
         <div class="game-card">
-            <img src="../img/the witcher.jpeg" alt="the witcher img">
+            <img src="../img/borderland3.jpeg" alt="Borderland img">
             <h3>The Witcher</h3>
-            <p class="price"></p>
+            <p class="price">$30.99</p>
+            <button><i class="fa-solid fa-cart-plus"></i></button>
+        </div>
+        <div class="game-card">
+            <img src="../img/god for war.jpeg" alt="god for war img">
+            <h3>God of War</h3>
+            <p class="price">$29.99</p>
+            <button><i class="fa-solid fa-cart-plus"></i></button>
+        </div>
+        <div class="game-card">
+            <img src="../img/assassin's creed syndicate.jpeg" alt="Assassin's creed syndicate img">
+            <h3>Assassin's creed syndicate</h3>
+            <p class="price">$35.99</p>
+            <button><i class="fa-solid fa-cart-plus"></i></button>
+        </div>
+        <div class="game-card">
+            <img src="../img/DRAGON BALL XENOVERSE.jpeg" alt="DRAGON BALL XENOVERSE img">
+            <h3>DRAGON BALL XENOVERSE</h3>
+            <p class="price">$90.00</p>
+            <button><i class="fa-solid fa-cart-plus"></i></button>
+        </div>
+        <div class="game-card">
+            <img src="../img/Borderlands 2.jpeg" alt="Borderlands 2 img">
+            <h3>Borderlands 2</h3>
+            <p class="price">$14.00</p>
+            <button><i class="fa-solid fa-cart-plus"></i></button>
+        </div>
+        <div class="game-card">
+            <img src="../img/Warframe.jpeg" alt="Warframe img">
+            <h3>Warframe</h3>
+            <p class="price">$29.99</p>
+            <button><i class="fa-solid fa-cart-plus"></i></button>
+        </div>
+        <div class="game-card">
+            <img src="../img/Resident Evil 4 Remake.jpeg" alt="Resident Evil 4 img">
+            <h3>Resident Evil 4</h3>
+            <p class="price">$14.99</p>
+            <button><i class="fa-solid fa-cart-plus"></i></button>
+        </div>
+        <div class="game-card">
+            <img src="../img/Lego Batman.jpeg" alt="Lego Batman img">
+            <h3>Lego Batman</h3>
+            <p class="price">$10.00</p>
             <button><i class="fa-solid fa-cart-plus"></i></button>
         </div>
          
+         
+    </section>
+    <section class="balance-section">
+        <p><i class="fa-solid fa-wallet"></i>my current balance: $50.00</p>
+        <button class="deposit">Deposit money</button>
     </section>
    </main>
    <footer>
     <p>&copy; 2025 VideoGame-Store.All rights are reserved.</p>
    </footer>
+   <script src="home.js"></script>
+   <script src="../logo/logo.js"></script>
 </body>
 </html>
