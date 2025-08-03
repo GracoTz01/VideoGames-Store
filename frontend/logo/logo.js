@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ctx.fillStyle = "#e50914";
         ctx.shadowColor = "red";
         ctx.shadowBlur = blur;
-        const xGame = 10;
+        const xGame = 25;
         const y = 35;
         ctx.fillText("Game", xGame, y);
 
